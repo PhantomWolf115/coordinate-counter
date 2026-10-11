@@ -29,6 +29,10 @@ node test/counter.test.mjs
 npx --yes serve .
 ```
 
-## Deploy
+## Live site
+
+https://phantomwolf115.github.io/coordinate-counter/
 
 Hosted on GitHub Pages from the `main` branch (site root).
+
+Repo: https://github.com/PhantomWolf115/coordinate-counter
