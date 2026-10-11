@@ -1,0 +1,197 @@
+:root {
+  --bg: #eef3f7;
+  --bg-accent: #d9e6f0;
+  --surface: #ffffff;
+  --ink: #152533;
+  --muted: #5b6b7a;
+  --brand: #1b4f72;
+  --brand-press: #143c57;
+  --line: #c9d6e2;
+  --ok: #1f6b4a;
+  --err: #8b2e2e;
+  --shadow: 0 10px 30px rgba(21, 37, 51, 0.08);
+  --radius: 14px;
+  --touch: 48px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, #cfe0ec 0%, transparent 55%),
+    radial-gradient(900px 400px at 100% 0%, #dde8f1 0%, transparent 50%),
+    var(--bg);
+  color: var(--ink);
+}
+
+body {
+  padding: 24px 16px 48px;
+}
+
+.app {
+  width: min(720px, 100%);
+  margin: 0 auto;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.file-button,
+#copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch);
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.file-button {
+  background: var(--brand);
+  color: #fff;
+}
+
+.file-button:hover,
+.file-button:focus-visible {
+  background: var(--brand-press);
+}
+
+.file-button input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#copy-btn {
+  background: var(--surface);
+  color: var(--brand);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+#copy-btn:hover:not(:disabled),
+#copy-btn:focus-visible:not(:disabled) {
+  border-color: var(--brand);
+}
+
+#copy-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.results {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results th,
+.results td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.results th {
+  background: var(--bg-accent);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.results .num {
+  text-align: right;
+  width: 30%;
+  font-variant-numeric: tabular-nums;
+}
+
+.results tr:last-child td {
+  border-bottom: 0;
+}
+
+.results .empty td {
+  color: var(--muted);
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.results .spacer td {
+  padding: 8px 16px;
+  border-bottom: 0;
+}
+
+.results .total td {
+  font-weight: 700;
+  background: #f7fafc;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  max-width: min(90vw, 420px);
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: var(--shadow);
+  z-index: 10;
+}
+
+.toast.ok {
+  background: var(--ok);
+}
+
+.toast.err {
+  background: var(--err);
+}
+
+@media (max-width: 520px) {
+  .actions {
+    flex-direction: column;
+  }
+
+  .file-button,
+  #copy-btn {
+    width: 100%;
+  }
+}

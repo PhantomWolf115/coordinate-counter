@@ -1,0 +1,20 @@
+# Desktop / reverse-engineering leftovers
+Alep_2.1.exe
+Alep_2.1.exe_extracted/
+pyinstxtractor.py
+disasm_alep.py
+disasm_out.txt
+
+# Android scaffold (not part of the web app)
+android-coordinate-counter/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# Local
+.env*
+node_modules/
